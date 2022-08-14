@@ -10,3 +10,8 @@ pretrained/
 _build/
 build/
 nohup.out
+*.jpeg
+*.png
+*.jpg
+*.tar
+deploy/models/

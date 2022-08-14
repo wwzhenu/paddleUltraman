@@ -1,5 +1,5 @@
 Global:
-  rec_inference_model_dir: "./models/product_ResNet50_vd_aliproduct_v1.0_infer"
+  rec_inference_model_dir: "./models/cartoon_rec_ResNet50_iCartoon_v1.0_infer/"
   batch_size: 32
   use_gpu: False
   enable_mkldnn: True
@@ -14,6 +14,8 @@ Global:
 RecPreProcess:
   transform_ops:
     - ResizeImage:
+        resize_short: 256
+    - CropImage:
         size: 224
     - NormalizeImage:
         scale: 0.00392157
@@ -26,11 +28,11 @@ RecPostProcess: null
 
 # indexing engine config
 IndexProcess:
-  index_path: "./recognition_demo_data_v1.0/gallery_product/index_update"
-  image_root: "./recognition_demo_data_v1.0/gallery_product/"
-  data_file:  "./recognition_demo_data_v1.0/gallery_product/data_file_update.txt"
+  index_path: "./recognition_demo_data_v1.0/gallery_cartoon/index_ultraman/"
+  image_root: "./recognition_demo_data_v1.0/gallery_cartoon/"
+  data_file:  "./recognition_demo_data_v1.0/gallery_cartoon/data_file_ultraman.txt"
   append_index: False
   delimiter: "\t"
   dist_type: "IP"
   pq_size: 100
-  embedding_size: 512
+  embedding_size: 2048
